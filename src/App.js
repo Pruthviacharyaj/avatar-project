@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 function App() {
-  const [images, setImages] = useState([]);
   const [avatars, setAvatars] = useState([]);
 
   const handleUpload = (e) => {
@@ -12,7 +11,7 @@ function App() {
       return;
     }
 
-    setImages(files);
+    alert(files.length + " images selected successfully");
   };
 
   const generateAvatar = () => {

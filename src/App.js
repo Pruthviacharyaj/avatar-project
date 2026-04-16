@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import avatar1 from "./assets/avatars/avatar1.png";
+import avatar2 from "./assets/avatars/avatar2.png";
+import avatar3 from "./assets/avatars/avatar3.png";
+import avatar4 from "./assets/avatars/avatar4.png";
 
 function App() {
   const [step, setStep] = useState("login");
@@ -10,6 +14,13 @@ function App() {
   const [selectedAvatar, setSelectedAvatar] = useState("");
   const [selectedName, setSelectedName] = useState("");
   const [error, setError] = useState("");
+
+  const sampleAvatars = [
+    { id: 1, name: "Variation 1", url: avatar1 },
+    { id: 2, name: "Variation 2", url: avatar2 },
+    { id: 3, name: "Variation 3", url: avatar3 },
+    { id: 4, name: "Variation 4", url: avatar4 },
+  ];
 
   const handleLogin = () => {
     if (!email || !password) {
@@ -36,14 +47,7 @@ function App() {
     }
 
     setError("");
-
-    const demoAvatars = previews.slice(0, 3).map((img, index) => ({
-      id: index + 1,
-      name: `Variation ${index + 1}`,
-      url: img,
-    }));
-
-    setAvatars(demoAvatars);
+    setAvatars(sampleAvatars);
     setSelectedAvatar("");
     setSelectedName("");
     setStep("result");
